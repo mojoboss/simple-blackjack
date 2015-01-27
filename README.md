@@ -17,3 +17,5 @@ the higher value wins. The dealer wins ties in our version.
 
 to run the code visit the folllowing generated link-
 http://www.codeskulptor.org/#user39_Q3ClatOwfn_0.py
+
+You must be using the latest version of chrome or mozila for this code to run properly.
