@@ -1,0 +1,44 @@
+import simplegui
+
+#############################################################################################################################
+
+WIDTH= 200
+HEIGHT= 200
+SUITS=('C', 'S', 'H', 'D')
+RANKS=('A', '2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K')
+CARD_CENTER = (36.5, 49)
+CARD_SIZE = (73, 98)
+img=simplegui.load_image("http://commondatastorage.googleapis.com/codeskulptor-assets/cards.jfitz.png")
+
+#############################################################################################################################
+
+class Card:
+    
+    def __init__(self, suit, rank):
+        self.suit=suit
+        self.rank=rank
+    
+    def __str__():
+        return "suit= " + self.suit + "rank= " + self.rank 
+    
+    def draw_card(self, canvas):
+        
+        i=RANKS.index(self.rank)
+        j=SUITS.index(self.suit)
+        pos=[ CARD_CENTER[0]+ i*CARD_SIZE[0], CARD_CENTER[1]+ j*CARD_SIZE[1] ]
+        
+        canvas.draw_image(img, pos, CARD_SIZE, [WIDTH/2, HEIGHT/2], CARD_SIZE)
+        
+############################################################################################################################		
+
+def drawHandler(canvas):
+    card1.draw_card(canvas)
+
+############################################################################################################################
+    
+card1= Card('D', 'K')    
+    
+frame=simplegui.create_frame("CARDS", WIDTH, HEIGHT)
+frame.set_draw_handler(drawHandler)
+frame.start()
+
